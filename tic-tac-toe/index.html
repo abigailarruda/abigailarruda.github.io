@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./css/index.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <title>Tic-Tac-Toe</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="card">
+          <div class="card-image yellow">
+            <img
+              src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/285/bomb_1f4a3.png"
+              alt=""
+            />
+          </div>
+
+          <h2>Jogador 01</h2>
+
+          <p>Círculo</p>
+
+          <p><i data-feather="circle" width="1rem"></i> 1</p>
+        </div>
+      </section>
+
+      <section class="game">
+        <div class="buttons">
+          <button class="yellow">Iniciar</button>
+
+          <button class="purple" disabled>Resetar</button>
+        </div>
+
+        <div class="tic-tac-toe">
+          <div class="cell">
+            <i
+              data-feather="circle"
+              width="5rem"
+              height="5rem"
+              color="#FFC82C"
+            ></i>
+          </div>
+
+          <div class="cell">
+            <i
+              data-feather="x"
+              width="7rem"
+              height="7rem"
+              color="#7e5bef"
+              stroke-width="1.5"
+            ></i>
+          </div>
+
+          <div class="cell">
+            <i
+              data-feather="x"
+              width="7rem"
+              height="7rem"
+              color="#7e5bef"
+              stroke-width="1.5"
+            ></i>
+          </div>
+
+          <div class="cell">
+            <i
+              data-feather="x"
+              width="7rem"
+              height="7rem"
+              color="#7e5bef"
+              stroke-width="1.5"
+            ></i>
+          </div>
+
+          <div class="cell">
+            <i
+              data-feather="circle"
+              width="5rem"
+              height="5rem"
+              color="#FFC82C"
+            ></i>
+          </div>
+
+          <div class="cell">
+            <i
+              data-feather="x"
+              width="7rem"
+              height="7rem"
+              color="#7e5bef"
+              stroke-width="1.5"
+            ></i>
+          </div>
+
+          <div class="cell">
+            <i
+              data-feather="x"
+              width="7rem"
+              height="7rem"
+              color="#7e5bef"
+              stroke-width="1.5"
+            ></i>
+          </div>
+
+          <div class="cell">
+            <i
+              data-feather="circle"
+              width="5rem"
+              height="5rem"
+              color="#FFC82C"
+            ></i>
+          </div>
+
+          <div class="cell">
+            <i
+              data-feather="circle"
+              width="5rem"
+              height="5rem"
+              color="#FFC82C"
+            ></i>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="card">
+          <div class="card-image purple">
+            <img
+              src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/optical-disk_1f4bf.png"
+              alt=""
+            />
+          </div>
+
+          <h2>Jogador 02</h2>
+
+          <p>Cruz</p>
+
+          <p><i data-feather="x" width="1rem"></i> 0</p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
