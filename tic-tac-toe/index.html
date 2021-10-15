@@ -7,46 +7,56 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
       href="./css/index.css"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
     <title>Tic-Tac-Toe</title>
   </head>
   <body>
     <main>
-      <section>
+      <section class="player">
         <div class="card">
-          <div class="card-image yellow">
+          <div class="card-image" id="player-one-card-image">
             <img
-              src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/285/bomb_1f4a3.png"
-              alt=""
+              src="https://i.ibb.co/8xtwycY/cloud-2601-fe0f.png"
+              id="player-one-image"
             />
           </div>
 
-          <h2>Jogador 01</h2>
+          <h2 id="player-one-name">Jogador 01</h2>
 
           <p>Círculo</p>
 
-          <p><i data-feather="circle" width="1rem"></i> 1</p>
+          <p>
+            <i data-feather="circle" width="1rem"></i>
+            <span id="player-one-score"> 1</span>
+          </p>
         </div>
       </section>
 
       <section class="game">
         <div class="buttons">
-          <button class="yellow">Iniciar</button>
+          <button id="button-start">Iniciar</button>
 
-          <button class="purple" disabled>Resetar</button>
+          <button id="button-restart" disabled>Resetar</button>
         </div>
 
         <div class="tic-tac-toe">
@@ -55,7 +65,7 @@
               data-feather="circle"
               width="5rem"
               height="5rem"
-              color="#FFC82C"
+              color="#8492a6"
             ></i>
           </div>
 
@@ -64,7 +74,7 @@
               data-feather="x"
               width="7rem"
               height="7rem"
-              color="#7e5bef"
+              color="#8492a6"
               stroke-width="1.5"
             ></i>
           </div>
@@ -74,7 +84,7 @@
               data-feather="x"
               width="7rem"
               height="7rem"
-              color="#7e5bef"
+              color="#8492a6"
               stroke-width="1.5"
             ></i>
           </div>
@@ -84,36 +94,7 @@
               data-feather="x"
               width="7rem"
               height="7rem"
-              color="#7e5bef"
-              stroke-width="1.5"
-            ></i>
-          </div>
-
-          <div class="cell">
-            <i
-              data-feather="circle"
-              width="5rem"
-              height="5rem"
-              color="#FFC82C"
-            ></i>
-          </div>
-
-          <div class="cell">
-            <i
-              data-feather="x"
-              width="7rem"
-              height="7rem"
-              color="#7e5bef"
-              stroke-width="1.5"
-            ></i>
-          </div>
-
-          <div class="cell">
-            <i
-              data-feather="x"
-              width="7rem"
-              height="7rem"
-              color="#7e5bef"
+              color="#8492a6"
               stroke-width="1.5"
             ></i>
           </div>
@@ -123,7 +104,27 @@
               data-feather="circle"
               width="5rem"
               height="5rem"
-              color="#FFC82C"
+              color="#8492a6"
+            ></i>
+          </div>
+
+          <div class="cell">
+            <i
+              data-feather="x"
+              width="7rem"
+              height="7rem"
+              color="#8492a6"
+              stroke-width="1.5"
+            ></i>
+          </div>
+
+          <div class="cell">
+            <i
+              data-feather="x"
+              width="7rem"
+              height="7rem"
+              color="#8492a6"
+              stroke-width="1.5"
             ></i>
           </div>
 
@@ -132,26 +133,38 @@
               data-feather="circle"
               width="5rem"
               height="5rem"
-              color="#FFC82C"
+              color="#8492a6"
+            ></i>
+          </div>
+
+          <div class="cell">
+            <i
+              data-feather="circle"
+              width="5rem"
+              height="5rem"
+              color="#8492a6"
             ></i>
           </div>
         </div>
       </section>
 
-      <section>
+      <section class="player">
         <div class="card">
-          <div class="card-image purple">
+          <div class="card-image" id="player-two-card-image">
             <img
-              src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/optical-disk_1f4bf.png"
-              alt=""
+              src="https://i.ibb.co/yPT7H6N/envelope-2709-fe0f.png"
+              id="player-two-image"
             />
           </div>
 
-          <h2>Jogador 02</h2>
+          <h2 id="player-two-name">Jogador 02</h2>
 
           <p>Cruz</p>
 
-          <p><i data-feather="x" width="1rem"></i> 0</p>
+          <p>
+            <i data-feather="x" width="1.5rem" stroke-width="1.5"></i>
+            <span id="player-two-score"> 0</span>
+          </p>
         </div>
       </section>
     </main>
@@ -159,5 +172,6 @@
     <script>
       feather.replace();
     </script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
