@@ -126,9 +126,6 @@ function verifyWinner(playerTurn) {
 }
 
 function stop() {
-  totalMovements = 0;
-  turn = true;
-
   while (playerOneMovements.length > 0) {
     playerOneMovements.pop();
   }
@@ -136,6 +133,9 @@ function stop() {
   while (playerTwoMovements.length > 0) {
     playerTwoMovements.pop();
   }
+
+  totalMovements = 0;
+  turn = true;
 
   for (c of cells) {
     if (c.hasChildNodes()) {
