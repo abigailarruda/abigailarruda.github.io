@@ -46,11 +46,11 @@
 
           <h2 id="player-one-name">Jogador 01</h2>
 
-          <p>Círculo</p>
+          <p>Cruz</p>
 
           <p>
-            <i data-feather="circle" width="1rem"></i>
-            <span id="player-one-score"> 1</span>
+            <i data-feather="x" width="1.5rem" stroke-width="1.5"></i>
+            <span id="player-one-score">0</span>
           </p>
         </div>
       </section>
@@ -59,95 +59,27 @@
         <div class="buttons">
           <button id="button-start">Iniciar</button>
 
-          <button id="button-restart" disabled>Resetar</button>
+          <button id="button-restart">Resetar</button>
         </div>
 
         <div class="tic-tac-toe">
-          <div class="cell">
-            <i
-              data-feather="circle"
-              width="5rem"
-              height="5rem"
-              color="#8492a6"
-            ></i>
-          </div>
+          <div class="cell" id="0"></div>
 
-          <div class="cell">
-            <i
-              data-feather="x"
-              width="7rem"
-              height="7rem"
-              color="#8492a6"
-              stroke-width="1.5"
-            ></i>
-          </div>
+          <div class="cell" id="1"></div>
 
-          <div class="cell">
-            <i
-              data-feather="x"
-              width="7rem"
-              height="7rem"
-              color="#8492a6"
-              stroke-width="1.5"
-            ></i>
-          </div>
+          <div class="cell" id="2"></div>
 
-          <div class="cell">
-            <i
-              data-feather="x"
-              width="7rem"
-              height="7rem"
-              color="#8492a6"
-              stroke-width="1.5"
-            ></i>
-          </div>
+          <div class="cell" id="3"></div>
 
-          <div class="cell">
-            <i
-              data-feather="circle"
-              width="5rem"
-              height="5rem"
-              color="#8492a6"
-            ></i>
-          </div>
+          <div class="cell" id="4"></div>
 
-          <div class="cell">
-            <i
-              data-feather="x"
-              width="7rem"
-              height="7rem"
-              color="#8492a6"
-              stroke-width="1.5"
-            ></i>
-          </div>
+          <div class="cell" id="5"></div>
 
-          <div class="cell">
-            <i
-              data-feather="x"
-              width="7rem"
-              height="7rem"
-              color="#8492a6"
-              stroke-width="1.5"
-            ></i>
-          </div>
+          <div class="cell" id="6"></div>
 
-          <div class="cell">
-            <i
-              data-feather="circle"
-              width="5rem"
-              height="5rem"
-              color="#8492a6"
-            ></i>
-          </div>
+          <div class="cell" id="7"></div>
 
-          <div class="cell">
-            <i
-              data-feather="circle"
-              width="5rem"
-              height="5rem"
-              color="#8492a6"
-            ></i>
-          </div>
+          <div class="cell" id="8"></div>
         </div>
       </section>
 
@@ -162,11 +94,11 @@
 
           <h2 id="player-two-name">Jogador 02</h2>
 
-          <p>Cruz</p>
+          <p>Círculo</p>
 
           <p>
-            <i data-feather="x" width="1.5rem" stroke-width="1.5"></i>
-            <span id="player-two-score"> 0</span>
+            <i data-feather="circle" width="1rem"></i>
+            <span id="player-two-score">0</span>
           </p>
         </div>
       </section>
@@ -175,7 +107,6 @@
     <script>
       feather.replace();
     </script>
-
     <script src="./js/index.js"></script>
   </body>
 </html>
