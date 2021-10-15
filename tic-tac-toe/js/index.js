@@ -8,6 +8,8 @@ const cells = document.querySelectorAll(".cell");
 let totalMovements = 0;
 let turn = true;
 
+let board = [];
+
 const combinations = [
   ["0", "1", "2"],
   ["3", "4", "5"],
@@ -134,6 +136,10 @@ function stop() {
     playerTwoMovements.pop();
   }
 
+  while (board.length > 0) {
+    board.pop();
+  }
+
   totalMovements = 0;
   turn = true;
 
@@ -163,6 +169,12 @@ const inputAlertConfig = {
 function play(id) {
   const cell = document.getElementById(id);
   let playerTurn = turn ? playerOne : playerTwo;
+
+  if (board.includes(id)) {
+    return;
+  } else {
+    board.push(id);
+  }
 
   if (turn) {
     playerOneMovements.push(id);
