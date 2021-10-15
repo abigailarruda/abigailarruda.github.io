@@ -229,6 +229,9 @@ restartButton.addEventListener("click", () => {
   playerOneScore = 0;
   playerTwoScore = 0;
 
+  document.getElementById("player-one-score").textContent = playerOneScore;
+  document.getElementById("player-two-score").textContent = playerTwoScore;
+
   startButton.disabled = false;
   restartButton.disabled = true;
 });
