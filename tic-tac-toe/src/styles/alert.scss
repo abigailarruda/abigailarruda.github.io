@@ -10,7 +10,7 @@
 }
 
 .swal2-title {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 1.5rem;
   color: var(--black-400);
@@ -20,7 +20,7 @@
 }
 
 .swal2-html-container {
-  font: 400 1rem "Open Sans", sans-serif;
+  font: 400 1rem 'Open Sans', sans-serif;
   color: var(--black-400);
 
   padding: 0;
@@ -62,10 +62,10 @@
   background-color: var(--white-500);
 
   border-radius: 4px;
-  border: 1px solid var(--gray-100);
+  border: 1px solid var(--gray-200);
   box-shadow: none !important;
 
-  font: 400 1rem "Open Sans", sans-serif;
+  font: 400 1rem 'Open Sans', sans-serif;
   text-align: left;
   color: var(--black-400);
 }
@@ -78,5 +78,5 @@
 }
 
 .swal2-input:focus {
-  border: 1px solid var(--gray-600);
+  border: 1px solid var(--gray-500);
 }
