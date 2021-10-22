@@ -1,9 +1,14 @@
 import { Image, ImageContainer } from './styles';
 
-export function PlayerImage() {
+interface Props {
+  icon: string;
+  color: string;
+}
+
+export function PlayerImage({ icon, color }: Props) {
   return (
-    <ImageContainer backgroundColor='yellow'>
-      <Image alt='' src='https://i.ibb.co/Z1py7r9/cowboy.png' />
+    <ImageContainer backgroundColor={color}>
+      <Image alt='' src={icon} />
     </ImageContainer>
   );
 }

@@ -11,7 +11,7 @@ import {
 } from '../../styles/colors';
 
 interface ImageContainerProps {
-  backgroundColor: 'blue' | 'green' | 'orange' | 'pink' | 'purple' | 'yellow';
+  backgroundColor: string;
 }
 
 export const Image = styled.img`

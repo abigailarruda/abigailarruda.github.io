@@ -1,35 +1,46 @@
-import { X, Circle } from 'react-feather';
+import { ReactElement, useContext } from 'react';
+import { Circle, X } from 'react-feather';
+import { PlayersContext } from '../../contexts/PlayersContext';
 
 import { Card } from '../Card';
 import { PlayerImage } from '../PlayerImage';
 import { PlayerInfo, PlayerName } from './styles';
 
 interface Props {
-  name: string;
-  score: number;
   symbol: 'x' | 'o';
 }
 
-export function PlayerCard({ name, score, symbol }: Props) {
-  const symbolName = symbol === 'x' ? 'Cruz' : 'Círculo';
+interface Symbol {
+  name: 'Cruz' | 'Círculo';
+  icon: ReactElement;
+}
 
-  const symbolIcon =
-    symbol === 'x' ? (
-      <X width='1.5rem' strokeWidth='1.5' />
-    ) : (
-      <Circle width='1rem' />
-    );
+export function PlayerCard({ symbol }: Props) {
+  const { playerOne, playerTwo } = useContext(PlayersContext);
+
+  const player = symbol === 'x' ? playerOne : playerTwo;
+
+  const playerSymbol: Symbol =
+    symbol === 'x'
+      ? {
+          name: 'Cruz',
+          icon: <X width='1.5rem' strokeWidth='1.5' />,
+        }
+      : {
+          name: 'Círculo',
+          icon: <Circle width='1rem' />,
+        };
 
   return (
     <Card>
-      <PlayerImage />
+      <PlayerImage icon={player.icon} color={player.color} />
 
-      <PlayerName>{name}</PlayerName>
+      <PlayerName>{player.name || 'Jogador'}</PlayerName>
 
-      <PlayerInfo>{symbolName}</PlayerInfo>
+      <PlayerInfo>{playerSymbol.name}</PlayerInfo>
 
       <PlayerInfo>
-        {symbolIcon} <span>{score}</span>
+        {playerSymbol.icon} <span>{player.score || 0}</span>
       </PlayerInfo>
     </Card>
   );

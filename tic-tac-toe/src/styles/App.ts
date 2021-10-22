@@ -25,7 +25,7 @@ export const Main = styled.main`
     grid-auto-rows: 1fr;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
-    gap: 2rem;
+    gap: 1rem;
   }
 
   @media (max-width: ${sm}) {

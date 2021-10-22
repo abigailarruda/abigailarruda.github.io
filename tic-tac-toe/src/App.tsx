@@ -6,11 +6,11 @@ import { Main } from './styles/App';
 function App() {
   return (
     <Main>
-      <Player name='Player 01' number='one' score={0} symbol={'x'} />
+      <Player symbol={'x'} />
 
       <Game />
 
-      <Player name='Player 02' number='two' score={0} symbol={'o'} />
+      <Player symbol={'o'} />
     </Main>
   );
 }
