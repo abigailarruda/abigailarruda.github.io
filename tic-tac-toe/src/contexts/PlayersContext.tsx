@@ -10,10 +10,11 @@ interface Player {
 interface PlayersContextData {
   playerOne: Player;
   playerTwo: Player;
-  setPlayerOneScore: (score: number) => void;
-  setPlayerTwoScore: (score: number) => void;
   setPlayerOneName: (name: string) => void;
+  setPlayerOneScore: (score: number) => void;
   setPlayerTwoName: (name: string) => void;
+  setPlayerTwoScore: (score: number) => void;
+  setPlayersIconsAndColors: () => void;
 }
 
 interface PlayersProviderProps {
@@ -23,8 +24,15 @@ interface PlayersProviderProps {
 export const PlayersContext = createContext({} as PlayersContextData);
 
 export function PlayersProvider({ children }: PlayersProviderProps) {
-  const [playerOne, setPlayerOne] = useState<Player>({} as Player);
-  const [playerTwo, setPlayerTwo] = useState<Player>({} as Player);
+  const defaultPlayer: Player = {
+    name: 'Jogador',
+    score: 0,
+    icon: '',
+    color: '',
+  };
+
+  const [playerOne, setPlayerOne] = useState<Player>(defaultPlayer);
+  const [playerTwo, setPlayerTwo] = useState<Player>(defaultPlayer);
 
   function getRandomItem(array: any) {
     const item = Math.floor(Math.random() * array.length);
@@ -69,14 +77,18 @@ export function PlayersProvider({ children }: PlayersProviderProps) {
 
     setPlayerOne({
       ...playerOne,
-      icon: iconsAndColors[playerOneRandomPosition].icon,
       color: iconsAndColors[playerOneRandomPosition].color,
+      icon: iconsAndColors[playerOneRandomPosition].icon,
+      name: 'Jogador',
+      score: 0,
     });
 
     setPlayerTwo({
       ...playerTwo,
-      icon: newIconsAndColors[playerTwoRandomPosition].icon,
       color: newIconsAndColors[playerTwoRandomPosition].color,
+      icon: newIconsAndColors[playerTwoRandomPosition].icon,
+      name: 'Jogador',
+      score: 0,
     });
   }
 
@@ -118,10 +130,11 @@ export function PlayersProvider({ children }: PlayersProviderProps) {
       value={{
         playerOne,
         playerTwo,
-        setPlayerOneScore,
-        setPlayerTwoScore,
         setPlayerOneName,
+        setPlayerOneScore,
         setPlayerTwoName,
+        setPlayerTwoScore,
+        setPlayersIconsAndColors,
       }}
     >
       {children}

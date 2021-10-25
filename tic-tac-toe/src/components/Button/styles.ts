@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
+import { darken } from 'polished';
 
-import { black, gray, white } from '../../styles/colors';
+import { negative, positive, white } from '../../styles/colors';
 
 interface ButtonContainerProps {
   isOutlined?: boolean;
@@ -17,12 +18,16 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   border: 0;
   border-radius: 4px;
 
-  background-color: ${gray[500]};
+  background-color: ${positive};
+
+  border: 2px solid ${positive};
 
   transition: all 300ms ease-in-out;
 
   &:hover {
-    background-color: ${black[300]};
+    background-color: ${darken(0.05, positive)};
+
+    border: 2px solid ${darken(0.05, positive)};
 
     transition: all 300ms ease-in-out;
   }
@@ -32,16 +37,16 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
     css`
       background-color: ${white[500]};
 
-      border: 2px solid ${gray[500]};
+      border: 2px solid ${negative};
 
-      color: ${gray[500]};
+      color: ${negative};
 
       &:hover {
         background-color: ${white[500]};
 
-        border-color: ${black[300]};
+        border-color: ${darken(0.05, negative)};
 
-        color: ${black[300]};
+        color: ${darken(0.05, negative)};
       }
     `}
 `;

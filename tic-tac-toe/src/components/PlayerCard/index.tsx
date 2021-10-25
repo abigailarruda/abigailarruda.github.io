@@ -35,12 +35,12 @@ export function PlayerCard({ symbol }: Props) {
     <Card>
       <PlayerImage icon={player.icon} color={player.color} />
 
-      <PlayerName>{player.name || 'Jogador'}</PlayerName>
+      <PlayerName>{player.name}</PlayerName>
 
       <PlayerInfo>{playerSymbol.name}</PlayerInfo>
 
       <PlayerInfo>
-        {playerSymbol.icon} <span>{player.score || 0}</span>
+        {playerSymbol.icon} <span>{player.score}</span>
       </PlayerInfo>
     </Card>
   );
