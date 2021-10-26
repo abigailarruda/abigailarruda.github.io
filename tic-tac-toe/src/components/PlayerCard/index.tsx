@@ -35,7 +35,7 @@ export function PlayerCard({ symbol }: Props) {
     <Card>
       <PlayerImage icon={player.icon} color={player.color} />
 
-      <PlayerName>{player.name}</PlayerName>
+      <PlayerName>{player.name || 'Jogador'}</PlayerName>
 
       <PlayerInfo>{playerSymbol.name}</PlayerInfo>
 

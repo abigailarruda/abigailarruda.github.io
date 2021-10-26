@@ -24,6 +24,8 @@ export function Game() {
   const [isPlayerOneTurn, setIsPlayerOneTurn] = useState(true);
   const [isSquareDisabled, setIsSquareDisabled] = useState(true);
   const [board, setBoard] = useState<string[]>(Array(9).fill(null));
+  const [isStartButtonDisabled, setIsStartButtonDisabled] = useState(false);
+  const [startButtonText, setStartButtonText] = useState('Jogar');
 
   const normalAlertConfig = {
     showCloseButton: false,
@@ -62,12 +64,16 @@ export function Game() {
     setTotalMovements(0);
     setIsPlayerOneTurn(true);
     setBoard(Array(9).fill(null));
+    setIsStartButtonDisabled(false);
+    setIsSquareDisabled(true);
+    setStartButtonText('Jogar novamente');
   }
 
   function restartGame() {
     endGame();
     setPlayersIconsAndColors();
     setIsSquareDisabled(true);
+    setStartButtonText('Jogar');
   }
 
   function playGame(index: number) {
@@ -123,7 +129,7 @@ export function Game() {
     setIsPlayerOneTurn(!isPlayerOneTurn);
   }
 
-  function startGame() {
+  function getPlayersNames() {
     Swal.fire({
       title: 'Ei, Jogador 01!',
       confirmButtonText: 'Salvar',
@@ -161,11 +167,21 @@ export function Game() {
     });
   }
 
+  function startGame() {
+    setIsStartButtonDisabled(true);
+    setIsSquareDisabled(false);
+    if (!playerOne.name.length && !playerTwo.name.length) {
+      getPlayersNames();
+    }
+  }
+
   return (
     <GameSection>
       <Card>
         <ButtonGroup>
-          <Button onClick={startGame}>Jogar</Button>
+          <Button onClick={startGame} disabled={isStartButtonDisabled}>
+            {startButtonText}
+          </Button>
           <Button isOutlined onClick={restartGame}>
             Resetar
           </Button>

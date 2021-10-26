@@ -49,4 +49,9 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
         color: ${darken(0.05, negative)};
       }
     `}
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
 `;

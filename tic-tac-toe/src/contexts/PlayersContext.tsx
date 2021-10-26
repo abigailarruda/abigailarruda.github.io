@@ -25,7 +25,7 @@ export const PlayersContext = createContext({} as PlayersContextData);
 
 export function PlayersProvider({ children }: PlayersProviderProps) {
   const defaultPlayer: Player = {
-    name: 'Jogador',
+    name: '',
     score: 0,
     icon: '',
     color: '',
@@ -79,7 +79,7 @@ export function PlayersProvider({ children }: PlayersProviderProps) {
       ...playerOne,
       color: iconsAndColors[playerOneRandomPosition].color,
       icon: iconsAndColors[playerOneRandomPosition].icon,
-      name: 'Jogador',
+      name: '',
       score: 0,
     });
 
@@ -87,7 +87,7 @@ export function PlayersProvider({ children }: PlayersProviderProps) {
       ...playerTwo,
       color: newIconsAndColors[playerTwoRandomPosition].color,
       icon: newIconsAndColors[playerTwoRandomPosition].icon,
-      name: 'Jogador',
+      name: '',
       score: 0,
     });
   }
